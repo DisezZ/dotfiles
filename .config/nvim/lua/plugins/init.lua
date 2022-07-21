@@ -88,6 +88,12 @@ local plugins = {
   ["onsails/lspkind.nvim"] = {
   },
 
+  ["simrat39/rust-tools.nvim"] = {
+    config = function ()
+      require "plugins.configs.rust-tools"
+    end
+  },
+
  -- load luasnips + cmp related in insert mode only
 
   ["rafamadriz/friendly-snippets"] = {

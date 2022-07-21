@@ -2,7 +2,7 @@ local options = {
   settings = {
     Lua = {
        diagnostics = {
-          globals = { "vim" },
+          globals = { "vim", "awesome" },
        },
        workspace = {
           library = {

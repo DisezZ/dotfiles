@@ -70,13 +70,16 @@ lspconfig.util.default_config = vim.tbl_extend(
 )
 
 for _, server in ipairs(lsp_installer.get_installed_servers()) do
-   local options = {}
+  local options = {}
 
-   if server.name == "sumneko_lua" then
-      options = require "plugins.configs.lsp.sumneko_lua"
-   end
+  if server.name == "sumneko_lua" then
+    options = require "plugins.configs.lsp.sumneko_lua"
+  else if server.name == "rust-analyzer" then
+    goto continue end
+  end
 
-   lspconfig[server.name].setup(options)
+  lspconfig[server.name].setup(options)
+  ::continue::
 end
 
 --[[local sumneko_options = {
